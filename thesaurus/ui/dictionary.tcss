@@ -1,0 +1,98 @@
+Screen {
+    background: $panel;
+}
+
+Title {
+    dock: top;
+    content-align: left top;
+}
+
+.associations-list {
+    content-align: left top;
+}
+
+Association  Horizontal {
+    height: auto;
+    width: 100%;
+    content-align: left top;
+
+
+}
+.association-horizon {
+    height: auto; 
+    width: 100%;
+}
+
+Association Vertical {
+    height: auto;
+    width: 100%;
+}
+
+.ass-group {
+    width: 90%;
+    height: auto;
+}
+
+.associations-list {
+    padding-bottom: 1;
+    background: $panel;
+}
+
+.ass-num {
+    color: 10% auto;
+}
+
+#results-container > ListItem.--highlight {
+    background: $panel-lighten-1;
+
+}
+
+ListView {
+    scrollbar-size: 1 1;
+
+}
+Content {
+    padding: 1 2;
+    padding-bottom: 0;
+    width: 80%;
+}
+
+Sidebar {
+    width: 20%;
+    height: 100%;
+    background: $panel-darken-1;
+
+}
+
+.sidebar-item {
+    padding-bottom: 1;
+    background: $panel-darken-1;
+}
+
+Sidebar > ListView {
+    padding: 1;
+    
+    background: $panel-darken-1;
+}
+
+
+
+
+Sidebar > ListView > ListItem.--highlight {
+    color: $panel-lighten-1;
+
+}
+
+
+#data-source {
+    dock: bottom;
+    align-horizontal: right;
+    padding-top: 1;
+    color: $panel-lighten-1
+
+}
+
+Rule {
+    margin-top: 0;
+    margin-bottom: 1;
+}

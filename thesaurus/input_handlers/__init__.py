@@ -1,0 +1,2 @@
+from thesaurus.input_handlers.en_handler import handle_en_input, handle_en_ui
+from thesaurus.input_handlers.sv_handler import handle_sv_input, handle_sv_ui

@@ -1,0 +1,2 @@
+from thesaurus.rest.request_thesaurus_en import request_thesaurus_en
+from thesaurus.rest.request_thesaurus_sv import request_words_sv, request_synonyms_sv
