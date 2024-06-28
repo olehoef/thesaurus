@@ -2,7 +2,7 @@ import requests, threading, itertools, sys, time, dotenv, os
 from thesaurus import utils
 
 
-dotenv.load_dotenv()
+dotenv.load_dotenv('.env')
 
 def request_thesaurus_en(search_phrase):
     base_url = 'https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{}'
