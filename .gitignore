@@ -1,2 +1,4 @@
-/.DS_Store
+.DS_Store
 .env
+thesaurus.egg-info
+**__pycache__

@@ -34,7 +34,6 @@ class UIApp(App):
     
 
     def compose(self) -> ComposeResult:
-        #yield Input(placeholder="Search for a word")
         yield Header()
         with Container(id='content'):
             with Horizontal(id='content-horizon'):

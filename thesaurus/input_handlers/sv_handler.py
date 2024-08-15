@@ -19,7 +19,7 @@ def handle_sv_input(thesaurus, search_phrase) -> datamodel.Word:
         ),
     ]
     
-    # Ask for choice
+    
     response = inquirer.prompt(questions)
 
     chosen_word = response.get('word')

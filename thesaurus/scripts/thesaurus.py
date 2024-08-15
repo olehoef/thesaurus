@@ -15,7 +15,6 @@ from thesaurus.ui.app import UIApp
 def cli(search_phrase,lang,ui):
     thesaurus = datamodel.Thesaurus()
 
-    # Render thesaurus output
     if ui:
         match lang:
             case 'en':
@@ -28,7 +27,6 @@ def cli(search_phrase,lang,ui):
         
         UIApp(word=thesaurus.words[0], lang=lang, th=thesaurus).run()
     else:
-        # Handle user input
         match lang:
             case 'sv':
                 chosen_word = input_handlers.handle_sv_input(thesaurus, search_phrase)

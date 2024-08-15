@@ -19,7 +19,7 @@ def render(word: datamodel.Word):
         # Definition
         click.secho(f'{i+1} ', bold=True, nl=False)
         click.secho(sense.definition.replace('{it}', '').replace('{/it}',''), italic=True)
-        #click.echo('')
+        
 
         # Synonyms
         if sense.syns != []:
@@ -74,28 +74,19 @@ def _render_association(association_list, display_name):
                 wrapped_line = replace_at_index(wrapped_line, break_line_index, ','+line_break+indent)
                 
                 line_length = len(line[break_line_index:]) + len(indent)
-                #break_line_index = break_line_index + terminal_width
-            # if len(line[break_line_index:]) + len (indent) > terminal_width:
                 
-            #     break_line_index2 = find_pattern_backwards(wrapped_line, ',', break_line_index+terminal_width)
-
-            #     wrapped_line = replace_at_index(wrapped_line, break_line_index2, ','+line_break+indent)
             click.secho(wrapped_line, bold=False)
         else:
             wrapped_line = line
             click.echo(wrapped_line)
-        #click.echo(f'{line_length}:{terminal_width}')
 
 def find_pattern_backwards(string, pattern, start_index):
     index = string.rfind(pattern, 0, start_index)
     return index
 
 def replace_at_index(string, index, new_char):
-    # Convert string to list
     string_list = list(string)
-    # Replace character at index
     string_list[index] = new_char
-    # Convert list back to string
     new_string = ''.join(string_list)
     return new_string
 

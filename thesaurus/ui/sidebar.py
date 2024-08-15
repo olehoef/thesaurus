@@ -30,7 +30,6 @@ class SideBtn(Static):
 
 
     def on_click(self) -> None:
-        # The post_message method sends an event to be handled in the DOM
         self.post_message(self.Selected(self.word))
 
     def render(self) -> str:

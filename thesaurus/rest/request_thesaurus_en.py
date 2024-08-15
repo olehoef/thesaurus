@@ -9,7 +9,7 @@ def request_thesaurus_en(search_phrase):
     API_KEY = os.getenv("MW_API_KEY")
     params = {'key': API_KEY}
 
-    # Include the search phrase
+    
     url = base_url.format(search_phrase)
  
     # Loading animation
@@ -24,19 +24,17 @@ def request_thesaurus_en(search_phrase):
     t = threading.Thread(target=animateProcessing)
     t.start()
 
-    # Make a GET request
+    # GET request
     response = requests.get(url, params=params)
     done = True
     
 
-    # Check if the request was successful (status code 200)
+   
     if response.status_code == 200:
-        # Parse the JSON response
         data = response.json()
-
         return data
+    
     else:
-        # Print an error message if the request was not successful
         print(f"Error: {response.status_code} - {response.text}")
         return None
 

@@ -3,10 +3,10 @@ import click, sys, inquirer
 
 
 def handle_en_input(th:datamodel.Thesaurus, search_phrase:str) -> datamodel.Word:
-    # Get data
+
     data = rest.request_thesaurus_en(search_phrase)
 
-    # Validating data
+
     if data == []:
         click.echo('\nNo word found. Please try again.')
         sys.exit()
@@ -23,10 +23,10 @@ def handle_en_input(th:datamodel.Thesaurus, search_phrase:str) -> datamodel.Word
         chosen_word = response.get('choice')
         data = rest.request_thesaurus_en(chosen_word)
     elif type(data[0]) == dict:
-        # Create Thesaurus
+
         th = datamodel.Thesaurus()
 
-        # Add words from data
+
         for word in data:
             th.addEnWord(word)
     
@@ -34,7 +34,7 @@ def handle_en_input(th:datamodel.Thesaurus, search_phrase:str) -> datamodel.Word
 
         # Ask for word choice if there is more than one option
         if len(th.words) > 1: 
-            # Prepare word choice list
+            
             response_words = []
             for word in th.words:
                 response_words.append((f'{word.name}  ({word.type})', word))
@@ -46,7 +46,7 @@ def handle_en_input(th:datamodel.Thesaurus, search_phrase:str) -> datamodel.Word
                 ),
             ]
             
-            # Ask for choice
+            
             response = inquirer.prompt(questions)
 
             chosen_word = response.get('word')
@@ -57,9 +57,9 @@ def handle_en_input(th:datamodel.Thesaurus, search_phrase:str) -> datamodel.Word
     return th, chosen_word
 
 def handle_en_ui(thesaurus: datamodel.Thesaurus, search_phrase:str) -> None:
-    # Get data
+    
     data = rest.request_thesaurus_en(search_phrase)
-    # Validating data
+    
     if data == []:
         click.echo('\nNo word found. Please try again.')
         sys.exit()
@@ -75,6 +75,6 @@ def handle_en_ui(thesaurus: datamodel.Thesaurus, search_phrase:str) -> None:
         chosen_word = response.get('choice')
         data = rest.request_thesaurus_en(chosen_word)
 
-    # Add words from data
+    
     for word in data:
         thesaurus.addEnWord(word)
