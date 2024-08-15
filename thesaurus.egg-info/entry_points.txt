@@ -1,3 +1,0 @@
-[console_scripts]
-th = thesaurus.scripts.thesaurus:cli
-thesaurus = thesaurus.scripts.thesaurus:cli
